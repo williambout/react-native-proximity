@@ -1,0 +1,25 @@
+{
+  "name": "react-native-proximity",
+  "version": "0.1.1",
+  "description": "Detect proximity on iOS",
+  "main": "index.ios.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williambout/react-native-proximity.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "native",
+    "proximity"
+  ],
+  "author": "William Bout <hello@williambout.me> (https://github.com/williambout)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williambout/react-native-proximity/issues"
+  },
+  "homepage": "https://github.com/williambout/react-native-proximity"
+}
