@@ -1,6 +1,6 @@
 #react-native-proximity
 
-A React Native wrapper that provides access to the proximity sensor state of an iPhone.
+A React Native wrapper that provides access to the state of the proximity sensor.
 
 ![](https://github.com/williambout/react-native-proximity/raw/master/demo.gif)
 
