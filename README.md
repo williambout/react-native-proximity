@@ -14,7 +14,7 @@ npm install --save react-native-proximity
 ```
 - Link the library 
 ```shell
-rnpm link
+react-native link
 ```
 
 ##Usage
