@@ -1,6 +1,6 @@
 {
   "name": "react-native-proximity",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Detect proximity on iOS",
   "main": "index.ios.js",
   "scripts": {
