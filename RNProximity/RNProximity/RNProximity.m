@@ -4,8 +4,8 @@
 //  Created by William Bout
 //
 
-#import "RCTBridge.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTBridge.h>
+#import <React/RCTEventDispatcher.h>
 #import "RNProximity.h"
 
 @implementation RNProximity
