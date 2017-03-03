@@ -26,6 +26,14 @@ profile
 .idea/
 Pods
 
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
 # OS X
 .DS_Store
 
