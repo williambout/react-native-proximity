@@ -1,12 +1,12 @@
-#react-native-proximity
+# react-native-proximity
 
-A React Native wrapper that provides access to the state of the proximity sensor.
+A React Native wrapper that provides access to the state of the proximity sensor for iOS and Android.
 
 ![](https://github.com/williambout/react-native-proximity/raw/master/demo.gif)
 
 *Usage of react-native-proximity and scrollview.*
 
-##Getting Started
+## Getting Started
 
 - Install the library 
 ```shell
@@ -14,10 +14,10 @@ npm install --save react-native-proximity
 ```
 - Link the library 
 ```shell
-react-native link
+react-native link react-native-proximity
 ```
 
-##Usage
+## Usage
 
 Import the library
 
@@ -25,28 +25,29 @@ Import the library
 import Proximity from 'react-native-proximity';
 ```
 
-###addListener(callback)
-
+### addListener(callback)
+The callback function returns object with *proximity* and *distnace* property. If *proximity* is true, it means the device is close to an object. *distance* is only supported in Android.
 ```javascript
 componentDidMount(){
- Proximity.addListener(this._setProximity);
+ Proximity.addListener(this._proximityListener);
 },
 
 /**
  * State of proximity sensor
  * @param {object} data
  */
- _setProximity(data) {
+ _proximityListener(data) {
    this.setState({
      proximity: data.proximity,
+     distance: data.distance // Android-only 
    });
  },
 ```
 
-###removeListener(callback)
+### removeListener(callback)
 
 ```javascript
 componentWillUnmount() {
-  Proximity.removeListener(this._setProximity);
+  Proximity.removeListener(this._proximityListener);
 },
 ```
