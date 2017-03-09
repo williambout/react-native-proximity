@@ -26,7 +26,7 @@ import Proximity from 'react-native-proximity';
 ```
 
 ### addListener(callback)
-The callback function returns object with *proximity* and *distnace* property. If *proximity* is true, it means the device is close to an object. *distance* is only supported in Android.
+The callback function returns an object with *proximity* and *distance* properties. If *proximity* is true, it means the device is close to an physical object. *distance* is only supported in Android.
 ```javascript
 componentDidMount(){
  Proximity.addListener(this._proximityListener);
