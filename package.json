@@ -1,8 +1,8 @@
 {
   "name": "react-native-proximity",
   "version": "1.0.0",
-  "description": "Detect proximity on iOS",
-  "main": "index.ios.js",
+  "description": "Detect proximity on iOS and Android",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
