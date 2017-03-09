@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/react-native-proximity.svg)](https://badge.fury.io/js/react-native-proximity)
+
 # react-native-proximity
 
 A React Native wrapper that provides access to the state of the proximity sensor for iOS and Android.
