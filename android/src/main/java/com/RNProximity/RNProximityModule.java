@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.RNProximity;
 
 import android.content.Context;
 import android.hardware.Sensor;
