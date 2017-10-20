@@ -16,7 +16,7 @@ public class RNProximityPackage implements ReactPackage {
       return Arrays.<NativeModule>asList(new RNProximityModule(reactContext));
     }
 
-    @Override
+    // Deprecated in RN 0.47.0
     public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
     }
