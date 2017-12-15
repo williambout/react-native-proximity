@@ -16,7 +16,6 @@ public class RNProximityPackage implements ReactPackage {
       return Arrays.<NativeModule>asList(new RNProximityModule(reactContext));
     }
 
-    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
     }
