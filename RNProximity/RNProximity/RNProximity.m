@@ -12,6 +12,11 @@
 
 @synthesize bridge = _bridge;
 
++ (BOOL) requiresMainQueueSetup
+{
+    return YES;
+}
+
 - (instancetype)init
 {
     if ((self = [super init])) {
