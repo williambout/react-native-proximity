@@ -6,10 +6,10 @@ module.exports = {
       ios: {
         podspecPath: path.join(__dirname, 'react-native-proximity.podspec'),
       },
-      // android: {
-      //   packageImportPath: 'import io.invertase.firebase.RNFirebasePackage;',
-      //   packageInstance: 'new RNFirebasePackage()',
-      // },
+      android: {
+        packageImportPath: 'import com.RNProximity.RNProximityPackage;',
+        packageInstance: 'new RNProximityPackage()',
+      },
     },
   },
 }
