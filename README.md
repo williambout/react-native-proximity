@@ -19,6 +19,14 @@ npm install --save react-native-proximity
 react-native link react-native-proximity
 ```
 
+## Android
+
+Include the following permission in `AndroidManifest.xml`:
+
+```
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+```
+
 ## Usage
 
 Import the library
@@ -31,6 +39,7 @@ import Proximity from 'react-native-proximity';
 The callback function returns an object with *proximity* and *distance* properties. If *proximity* is true, it means the device is close to an physical object. *distance* is only supported in Android.
 ```javascript
 componentDidMount(){
+ Proximity.enableScreenOnOff(true) // enable screen on-off with proximity in android
  Proximity.addListener(this._proximityListener);
 },
 

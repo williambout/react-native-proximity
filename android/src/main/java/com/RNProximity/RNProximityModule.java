@@ -28,6 +28,7 @@ public class RNProximityModule extends ReactContextBaseJavaModule implements Sen
   private static final String KEY_EVENT_ON_SENSOR_CHANGE = "EVENT_ON_SENSOR_CHANGE";
   private static final String EVENT_ON_SENSOR_CHANGE = "onSensorChanged";
   private final ReactApplicationContext reactContext;
+  private PowerManager.WakeLock wakeLock;
 
   private SensorManager mSensorManager;
   private Sensor mProximity;
@@ -49,6 +50,16 @@ public class RNProximityModule extends ReactContextBaseJavaModule implements Sen
     }
   }
 
+  private PowerManager.WakeLock getWakeLock(){
+    Context context = this.reactContext.getApplicationContext();
+    PowerManager powerManager = context.getSystemService(PowerManager.class);
+    PowerManager.WakeLock wl;
+    if (powerManager.isWakeLockLevelSupported(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK)) {
+      return powerManager.newWakeLock(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK, "WAKE_LOCK:" + TAG);
+    }
+    return null;
+  }
+
   @ReactMethod
   public void addListener() {
     mSensorManager.registerListener(this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
@@ -57,6 +68,16 @@ public class RNProximityModule extends ReactContextBaseJavaModule implements Sen
   @ReactMethod
   public void removeListener() {
     mSensorManager.unregisterListener(this);
+  }
+
+  @ReactMethod
+  public void proximityEnabled(boolean enable) {
+    if(this.wakeLock != null){
+    if(enable){
+      this.wakeLock.acquire();
+    } else
+      this.wakeLock.release();
+    }
   }
 
   @Override

@@ -11,6 +11,12 @@ const nativeModule = NativeModules.RNProximity;
 let addListener = null;
 let removeListener = null;
 
+// only for Android
+let screenOnOff = false;
+const enableScreenOnOff = function(value) {
+  screenOnOff = value;
+};
+
 if (Platform.OS === 'ios') {
   addListener = function(callback) {
     NativeModules.RNProximity.proximityEnabled(true);
@@ -26,10 +32,16 @@ if (Platform.OS === 'ios') {
   }
 } else if (Platform.OS == 'android') {
   addListener = (callback) => {
+    if (screenOnOff) {
+      nativeModule.proximityEnabled(true);
+    }
     nativeModule.addListener();
     DeviceEventEmitter.addListener(nativeModule.EVENT_ON_SENSOR_CHANGE, e => callback(e));
   };
   removeListener = (listener) => {
+    if (screenOnOff) {
+      nativeModule.proximityEnabled(false);
+    }
     nativeModule.removeListener();
     DeviceEventEmitter.removeAllListeners(nativeModule.EVENT_ON_SENSOR_CHANGE, listener);
   };
@@ -38,4 +50,5 @@ if (Platform.OS === 'ios') {
 module.exports = {
   addListener,
   removeListener,
+  enableScreenOnOff
 };
